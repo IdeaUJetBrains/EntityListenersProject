@@ -14,10 +14,17 @@
       <foreign-key name="BUSSFK" columns="DRIVERSID" ref-table="DRIVERS" ref-schema="PUBLIC" ref-catalog="PUBLIC" ref-columns="ID" update-rule="3" delete-rule="3"/>
       <index name="BUSSES_DRIVERSID_UINDEX" unique="true" columns="DRIVERSID"/>
     </table>
+    <table name="CLASS_TABLE" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="CLASS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SYS_PK_10114" columns="ID"/>
+      <index name="CLASS_TABLE_ID_uindex" unique="true" columns="ID"/>
+    </table>
     <table name="CUSTOMER" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
       <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="CUSTOMER" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="SYS_PK_10100" columns="ID"/>
+      <exported-key name="CUSTFK" table="ORDER" schema="PUBLIC" catalog="PUBLIC" columns="CUSTOMERID"/>
       <exported-key name="CUSTFK" table="ORDER" schema="PUBLIC" catalog="PUBLIC" columns="CUSTOMERID"/>
     </table>
     <table name="DRIVERS" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
@@ -25,11 +32,17 @@
       <column name="BUSS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="SYS_PK_10096" columns="ID"/>
       <exported-key name="BUSSFK" table="BUSSES" schema="PUBLIC" catalog="PUBLIC" columns="DRIVERSID"/>
+      <exported-key name="BUSSFK" table="BUSSES" schema="PUBLIC" catalog="PUBLIC" columns="DRIVERSID"/>
     </table>
     <table name="EMPLOYEE" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
       <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="SYS_PK_10110" columns="ID"/>
+    </table>
+    <table name="EXISTENT" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
+      <column name="EXISTENT_ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="EXISTENT_NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SYS_PK_10121" columns="EXISTENT_ID"/>
     </table>
     <table name="ORDER" schema="PUBLIC" catalog="PUBLIC" type="TABLE">
       <column name="ID" sqlType="INTEGER" precision="32" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

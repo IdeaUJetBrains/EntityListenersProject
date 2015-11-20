@@ -15,7 +15,7 @@ public class Bug137034Query {
 
     static EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-    private final String QUERY_PENDING_POLICIES_IDS = "bla-bla";
+    private static final String QUERY_PENDING_POLICIES_IDS = "bla-bla";
 
     public static void main(String[] a) throws Exception {
         entityManager.getTransaction().begin();

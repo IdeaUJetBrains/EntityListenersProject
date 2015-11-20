@@ -3,7 +3,11 @@
 
     <persistence-unit name="NewPersistenceUnit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <mapping-file>META-INF/mappings.xml</mapping-file>
         <class>data2.Employee</class>
+        <class>data2.bug138237.LookupValue</class>
+        <class>data2.Bug141138Query</class>
+        <class>data2.bug58803.Employee1</class>
 
         <properties>
             <property name="hibernate.connection.url" value="jdbc:hsqldb:file:C:/Users/Olga Pavlova/IdeaProjects/EntityListenersProject/DB/DB"/>

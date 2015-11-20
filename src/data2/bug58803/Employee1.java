@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @NamedNativeQuery(name = "user", query = "INSERT INTO EMPLOYEE NAME values #username")
-public class Employee {
+public class Employee1 {
 
     private int id;
     private String name;
